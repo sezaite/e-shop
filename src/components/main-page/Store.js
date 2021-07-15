@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import StoreList from './StoreList';
 import CartMenu from './CartMenu';
 import useFetch from '../../helpers/useFetch';
@@ -9,7 +8,8 @@ function Store() {
     return (
         <div className="store-page">
             <CartMenu />
-            <StoreList />
+            {error && <h2 className="error-msg">Could not load products</h2>}
+            {isFetching ? <h2 className="loading-msg">Loading...</h2> : <StoreList items={data} />}
 
         </div>
     )
