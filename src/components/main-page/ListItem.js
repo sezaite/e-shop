@@ -1,6 +1,6 @@
 
 
-function ListItem() {
+function ListItem({ price, title, description, img }) {
     return (
         <div>
 

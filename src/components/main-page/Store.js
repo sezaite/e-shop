@@ -3,7 +3,7 @@ import CartMenu from './CartMenu';
 import useFetch from '../../helpers/useFetch';
 
 function Store() {
-    const { data, isFetching, error } = useFetch('');
+    const { data, isFetching, error } = useFetch('https://fakestoreapi.com/products?limit=15');
 
     return (
         <div className="store-page">
