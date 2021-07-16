@@ -9,9 +9,8 @@ const useFetch = (url) => {
     useEffect(() => {
         if (!url) return;
         axios.get(url).then(res => {
-            console.log(res);
-            setIsFetching(false);
             setData(res.data);
+            setIsFetching(false);
             setError(false)
         }).catch(err => {
             console.error(err);
