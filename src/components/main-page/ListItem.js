@@ -1,6 +1,15 @@
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../state/actions/cartActions';
 
-function ListItem({ id, price, title, description, img }) {
+function ListItem({ id, price, title, img }) {
+    const dispatch = useDispatch();
+
+    const updateCart = (e) => {
+        e.preventDefault();
+        dispatch(addToCart(id));
+        //cart pops up
+    }
     return (
         <div className="item-card">
             <img src={img} alt="itemIMG" />
@@ -8,7 +17,7 @@ function ListItem({ id, price, title, description, img }) {
                 <h3>{title}</h3>
                 <h5>{price}</h5>
             </Link>
-            <button className="btn">Add to cart</button>
+            <button className="btn" onClick={updateCart}>Add to cart</button>
         </div>
     )
 }

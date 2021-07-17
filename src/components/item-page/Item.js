@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
-import useFetch from '../../helpers/useFetch';
+import useFetch from '../main-page/useFetch';
 
 function Item() {
     const { id } = useParams();

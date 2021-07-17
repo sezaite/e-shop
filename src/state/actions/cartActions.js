@@ -1,9 +1,15 @@
-export const addToCart = item => ({
+export const addToCart = id => ({
     type: "ADD_TO_CART",
-    payload: item
+    payload: id
 })
 
-export const removeFromCart = item => ({
+export const removeFromCart = id => ({
     type: "REMOVE_FROM_CART",
-    payload: item
+    payload: id
 })
+
+export const setStore = data => ({
+    type: "SET_STORE",
+    payload: data
+})
+
