@@ -1,8 +1,8 @@
 import StoreList from './StoreList';
-import CartMenu from './CartMenu';
+import CartMenu from '../cart/CartMenu';
 import useFetch from './useFetch';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setStore } from '../../state/actions/cartActions';
 
 
@@ -10,9 +10,10 @@ function Store() {
     const { data, isFetching, error } = useFetch('https://fakestoreapi.com/products?limit=15');
     const dispatch = useDispatch();
 
+
     useEffect(() => {
-        dispatch(setStore(data));
-        console.log('data changed');
+        data === null ? console.log('Fetching...') : dispatch(setStore(data));
+
     }, [data]);
 
     return (

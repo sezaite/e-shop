@@ -6,6 +6,7 @@ const initState = {
 
 const cartReducer = (state = initState, action) => {
     if (action.type === 'SET_STORE') {
+        console.log({ ...state, store: action.payload });
         return { ...state, store: action.payload }
     }
     if (action.type === 'ADD_TO_CART') {
