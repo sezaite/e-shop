@@ -10,11 +10,14 @@
     @media(max-width: 860px){
         grid-template-columns: 1fr 640px 1fr;
     }
-    @media(max-width: 680px){
+    @media(max-width: 700px){
         grid-template-columns: 20px 1fr 20px;
     }
 
     .page-top {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
         .sort {
             label {
 
@@ -38,7 +41,7 @@
         
 
         .items-container{
-            background-color: peachpuff;
+            
             grid-column: 2/3;
             display: grid;
             grid-template-columns: repeat(12, 1fr);
@@ -47,11 +50,11 @@
 
                 .item-card {
                     grid-column: auto / span 3;
-                  
-                    height: 380px;
+                    
+                    height: 440px;
                     padding: 10px;
-                    margin: 10px;
-                    border: 1px solid black;
+                    margin: 30px 10px 10px 10px;
+                   
                     text-align: center;
 
                     @media(max-width: 1300px){
@@ -67,14 +70,25 @@
                         grid-column: auto / span 12;
                     }
                     img {
-                        width: 100%;
-                        width: 200px;
+                       width: 220px;
+                        height: 300px;
+                        object-fit: contain;
+                        object-position: center;
+                        transition: all 0.3s;
+                        opacity: 0.8;
                     }
-                    h3 {
 
+                    img:hover {
+                        transform: scale(1.05);
+                        opacity: 1;
+                    }
+                    .elipsis {
+                        width: 220px;
+                        height: 50px;
+                        margin: 10px auto;
                     }
                     h5 {
-
+margin-bottom: 10px;
                     }
                 }
             

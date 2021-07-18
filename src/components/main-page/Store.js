@@ -23,6 +23,7 @@ function Store() {
             {isFetching ? <h2 className="loading-msg">Loading...</h2> :
                 <>
                     <div className="page-top">
+                        <h6>{data.length} products found</h6>
                         <div className="sort">
                             <label htmlFor="sort">Sort by price:</label>
                             <select defaultValue="select" name="sort" id="cars" onChange={(e) => setSort(e.target.value)}>
@@ -31,7 +32,7 @@ function Store() {
                                 <option value="desc">Descending</option>
                             </select>
                         </div>
-                        <h6>{data.length} products found</h6>
+
                     </div>
                     <StoreList items={data} sort={sort} />
                 </>

@@ -6,6 +6,9 @@
     color: $main-color;
     border: 1px solid $first-color;
     transition: all 0.2s;
+    @media(max-width: 680px){
+        width: 220px;;
+    }
 }
 
 .btn:hover{

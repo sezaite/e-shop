@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../state/actions/cartActions';
+import LinesEllipsis from 'react-lines-ellipsis'
 
 function ListItem({ id, price, title, img }) {
     const dispatch = useDispatch();
@@ -12,11 +13,19 @@ function ListItem({ id, price, title, img }) {
     }
     return (
         <div className="item-card">
-            <img src={img} alt="itemIMG" />
             <Link to={`/products/${id}`}>
-                <h3>{title}</h3>
-                <h5>{price}</h5>
+                <img src={img} alt="itemIMG" />
+                <LinesEllipsis
+                    text={title}
+                    maxLine='2'
+                    ellipsis='...'
+                    trimRight
+                    basedOn='words'
+                    className="elipsis"
+                />
+
             </Link>
+            <h5>{price} $</h5>
             <button className="btn" onClick={updateCart}>Add to cart</button>
         </div>
     )
