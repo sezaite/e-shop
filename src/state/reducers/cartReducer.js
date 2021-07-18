@@ -8,7 +8,6 @@ const initState = {
 
 const cartReducer = (state = initState, action) => {
     if (action.type === 'SET_STORE') {
-        // console.log({ ...state, store: action.payload });
         return { ...state, store: action.payload }
     }
     if (action.type === 'ADD_TO_CART') {
@@ -16,8 +15,6 @@ const cartReducer = (state = initState, action) => {
         let doesExist = state.cart.find(item => action.payload === item.id);
         if (!doesExist) {
             let newItem = state.store.find(item => action.payload === item.id);
-            //kad nenusismaisytu indexai 
-            // let newItem = state.store[action.payload - 1];
             newItem.amount = 1;
             return { ...state, cart: [...state.cart, newItem] };
         }
