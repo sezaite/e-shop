@@ -41,7 +41,7 @@ const cartReducer = (state = initState, action) => {
 
     if (action.type === 'REMOVE_FROM_CART') {
         let itemToRemove = state.cart.find(item => action.payload === item.id);
-        return { ...state, cart: state.cart.filter(item => item.id !== action.payload), total: state.total - itemToRemove.price };
+        return { ...state, cart: state.cart.filter(item => item.id !== action.payload), total: state.total - (itemToRemove.price * itemToRemove.amount) };
     }
 
     if (action.type === 'EMPTY_CART') {
