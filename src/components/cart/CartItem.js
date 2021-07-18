@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { addToCart, removeFromCart } from '../../state/actions/cartActions';
+import { addToCart, removeFromCart, decrement, emptyCart } from '../../state/actions/cartActions';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 function CartItem({ id, price, title, description, img, amount }) {
     const dispatch = useDispatch();
@@ -10,7 +12,8 @@ function CartItem({ id, price, title, description, img, amount }) {
             <h6>{price}</h6>
             <h6>{amount}</h6>
             <div className="amount">
-                <button className="dec-btn" onClick={() => dispatch(removeFromCart(id))}>-</button>
+                <button className="dec-btn" onClick={() => dispatch(removeFromCart(id))}><FontAwesomeIcon icon={faTimes} /></button>
+                <button className="inc-btn" onClick={() => dispatch(decrement(id))}>-</button>
                 <button className="inc-btn" onClick={() => dispatch(addToCart(id))}>+</button>
             </div>
         </div>

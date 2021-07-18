@@ -13,3 +13,13 @@ export const setStore = data => ({
     payload: data
 })
 
+export const decrement = data => ({
+    type: "DECREMENT",
+    payload: data
+})
+
+export const emptyCart = data => ({
+    type: "EMPTY_CART",
+
+})
+
