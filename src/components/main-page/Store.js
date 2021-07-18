@@ -9,27 +9,18 @@ import { setStore } from '../../state/actions/cartActions';
 function Store() {
     const [sort, setSort] = useState("");
     const { data, isFetching, error } = useFetch(`https://fakestoreapi.com/products?limit=15`);
-
     const dispatch = useDispatch();
 
-    const handleSort = (e) => {
-        setSort(e.target.value);
-    }
-
-
     useEffect(() => {
-        /* data === null ? console.log('Fetching...') :  */
-        dispatch(setStore(data));
-
-    }, []);
-
-
+        // data === null ? console.log('Fetching...') : dispatch(setStore(data));
+        if (data !== null) dispatch(setStore(data));
+    }, [data]);
 
     return (
         <div className="store-page">
-            <label htmlFor="sort"></label>
-            <select name="sort" id="cars" onChange={handleSort}>
-                <option selected disabled value="volvo">Select</option>
+            <label htmlFor="sort">Sort by price:</label>
+            <select defaultValue="select" name="sort" id="cars" onChange={(e) => setSort(e.target.value)}>
+                <option disabled value="select">Select</option>
                 <option value="asc">Ascending</option>
                 <option value="desc">Descending</option>
             </select>

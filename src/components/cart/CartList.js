@@ -1,8 +1,6 @@
 import CartItem from "./CartItem";
 
 function CartList({ cart }) {
-    // console.log(cart);
-
     return (
         <div className="cart-list">
             {cart.map((item) => (

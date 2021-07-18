@@ -3,6 +3,7 @@ import CartList from './CartList';
 import { Link } from 'react-router-dom';
 import { emptyCart } from '../../state/actions/cartActions';
 
+
 function CartMenu() {
     const cart = useSelector((state) => state.cartReducer.cart);
     const dispatch = useDispatch();
