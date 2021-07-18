@@ -6,6 +6,12 @@ import LinesEllipsis from 'react-lines-ellipsis'
 function ListItem({ id, price, title, img }) {
     const dispatch = useDispatch();
 
+    const dollars = (price, noCents) => {
+        const dollars = Math.floor(price);
+        const cents = price - dollars;
+        return noCents ? dollars : cents.toFixed(2).slice(1);
+    }
+
     const updateCart = (e) => {
         e.preventDefault();
         dispatch(addToCart(id));
@@ -25,7 +31,7 @@ function ListItem({ id, price, title, img }) {
                 />
 
             </Link>
-            <h5>{price} $</h5>
+            <h5 className="price">{dollars(price, true)}<u>{dollars(price, false)}</u></h5>
             <button className="btn" onClick={updateCart}>Add to cart</button>
         </div>
     )
