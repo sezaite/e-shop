@@ -14,7 +14,7 @@ function ListItem({ id, price, title, img }) {
 
     const updateCart = (e) => {
         e.preventDefault();
-        dispatch(addToCart(id));
+        dispatch(addToCart(id, e.target));
         //cart pops up
     }
     return (

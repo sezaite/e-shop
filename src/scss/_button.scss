@@ -37,12 +37,29 @@
     height: 16px;
     font-size: 14px;
     line-height: 16px;
-    color: $main-color;
     color: darken($main-color, 25%);
     background-color: darken($first-color, 20%);
     border: none;
+    cursor: pointer;
+    transition: all 0.3;
+    
+
+.desc-btn {
+    margin-right: 3px;
+}
 }
 
-desc-btn {
+.inc-btn:hover, .desc-btn:hover {
+    color: $main-color;
+}
 
+
+.desc-btn.disabled {
+    background-color: lighten($first-color, 5%);
+   
+    cursor: auto;
+
+    &:hover {
+        color: darken($main-color, 25%);
+    }
 }
