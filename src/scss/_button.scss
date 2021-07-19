@@ -20,3 +20,29 @@
 .btn:active{
     border: 1px solid $secondary-color;
 }
+
+.remove-btn {
+    background-color: transparent;
+    color: darken($first-color, 20%);
+    border: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.inc-btn, .desc-btn {
+    width: 16px;
+    height: 16px;
+    font-size: 14px;
+    line-height: 16px;
+    color: $main-color;
+    color: darken($main-color, 25%);
+    background-color: darken($first-color, 20%);
+    border: none;
+}
+
+desc-btn {
+
+}
