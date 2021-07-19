@@ -1,19 +1,5 @@
 .store-page {
-    display: grid;
-    margin: 30px 0;
-    grid-template-columns: 1fr 1200px 1fr;
-    @media(max-width: 1300px){
-        grid-template-columns: 1fr 980px 1fr;
-    }
-    @media(max-width: 1080px){
-        grid-template-columns: 1fr 780px 1fr;
-    }
-    @media(max-width: 860px){
-        grid-template-columns: 1fr 640px 1fr;
-    }
-    @media(max-width: 700px){
-        grid-template-columns: 20px 1fr 20px;
-    }
+   
 
     .page-top {
         width: 100%;
@@ -100,7 +86,6 @@
                         }
 
                         u {
-                            text-decoration: none;
                             font-size: 0.6em;
                         }
                         

@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart, removeFromCart, decrement } from '../../state/actions/cartActions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import LinesEllipsis from 'react-lines-ellipsis'
+import LinesEllipsis from 'react-lines-ellipsis';
+import priceFormatter from '../../helpers/priceFormatter';
 
 function CartItem({ id, price, title, description, img, amount }) {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function CartItem({ id, price, title, description, img, amount }) {
                     basedOn='words'
                     className='cart-elipsis'
                 />
-                <h6 className="price">{price}</h6>
+                <h6 className="price">$ {priceFormatter(price, true)}<u>{priceFormatter(price, false)}</u></h6>
             </div>
             <h6 className="amount">Quantity: {amount}</h6>
             <div className="amount-control">

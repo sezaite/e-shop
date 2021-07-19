@@ -1,6 +1,6 @@
 import StoreList from './StoreList';
 import CartMenu from '../cart/CartMenu';
-import useFetch from './useFetch';
+import useFetch from '../../helpers/useFetch';
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setStore } from '../../state/actions/cartActions';
@@ -16,7 +16,7 @@ function Store() {
     }, [data]);
 
     return (
-        <div className="store-page">
+        <div className="store-page main-block">
 
             <CartMenu />
             {error && <h2 className="error-msg">Could not load products</h2>}

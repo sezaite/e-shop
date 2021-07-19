@@ -19,3 +19,10 @@ body, body * {
 
     }
 }
+
+html {
+    font-size: 10px;
+    @media(max-width: 680px){
+        font-size: 7px;
+    }
+}

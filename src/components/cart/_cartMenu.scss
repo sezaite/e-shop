@@ -21,7 +21,7 @@
         margin-top: 40px;
     }
     .cart-list {
-        height: 75vh;
+        height: 70vh;
         overflow: auto;
         margin-top: 5vh;
         padding: 15px;
@@ -45,13 +45,10 @@
                     color: $main-color;
                     font-size: 12px;
                     width: 70%;
-                
-                    
                 }
 
                 .price {
                     color: $secondary-color;
-                    
                 }
 
             }
@@ -67,24 +64,21 @@
             .amount-control {
                 width: 100%;
                 text-align: end;
-
-                
             }
-
-
         }
     }
     .cart-bottom{
         padding: 20px;
-        height: 20vh;
+        height: 25vh;
         box-shadow: 10px 1px 10px 3px darken($first-color, 20px);
         overflow: hidden;
 
         .totals{
-            margin: 10px 0;
+            padding-bottom: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            margin-bottom: 20px;
             
             h4{
                 text-transform: uppercase;
@@ -100,11 +94,10 @@
         }
       
         .checkout {
+            
             display: inline-block;
             text-align: center;
-            // width: calc(100% - 20px);
             width: 100%;
-            // margin: 10px;
             background-color: darken($first-color, 20%);
             color: $main-color;
             padding: 10px 0;
