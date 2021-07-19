@@ -8,30 +8,33 @@ const initState = {
 
 const cartReducer = (state = initState, action) => {
     if (action.type === 'SET_STORE') {
+        if (state.store.length > 0) return state;
         return { ...state, store: action.payload }
     }
 
     if (action.type === 'ADD_TO_CART') {
-        let doesExist = state.cart.find(item => action.payload.id === item.id);
+        console.log(action.payload);
+        console.log(state.store);
+        let doesExist = state.cart.find(item => action.payload === item.id);
         if (!doesExist) {
-            let newItem = state.store.find(item => action.payload.id === item.id);
+            let newItem = state.store.find(item => action.payload === item.id);
             newItem.amount = 1;
             return { ...state, cart: [...state.cart, newItem], total: state.total + newItem.price };
         }
         return {
             ...state, cart:
                 state.cart.map((item) => {
-                    return item.id === action.payload.id ? { ...item, amount: ++item.amount } : item;
+                    return item.id === action.payload ? { ...item, amount: ++item.amount } : item;
                 }), total: state.total + doesExist.price
         }
     }
 
     if (action.type === 'DECREMENT') {
-        let itemToRemove = state.cart.find(item => action.payload.id === item.id);
+        let itemToRemove = state.cart.find(item => action.payload === item.id);
         if (itemToRemove.amount >= 2) {
             return {
                 ...state, cart: state.cart.map((item) => {
-                    return item.id === action.payload.id ? { ...item, amount: --item.amount } : item;
+                    return item.id === action.payload ? { ...item, amount: --item.amount } : item;
                 }), total: state.total - itemToRemove.price
             }
         }

@@ -9,18 +9,23 @@
         grid-column: 2/3;
         .sort {
             label {
-
+                font-size: 1.2rem;
+                margin-right: 15px;
             }
             select {
+                font-size: 1.2rem;
+                padding: 5px 10px;
+                outline: none;
                 
+               
                 option {
-
+                    font-size: 1.2rem;        
                 }
             }
         }
         
         h6 {
-
+            font-size: 1.4rem;
         }
 
     }
@@ -75,10 +80,12 @@
                         width: 220px;
                         height: 50px;
                         margin: 10px auto;
+                        font-size: 1.4rem;
                     }
                     h5.price {
                         margin-bottom: 10px;
-                        font-size: 20px;
+                        font-size: 2rem;
+                        font-weight: 700;
 
                         &::before {
                             content: "$ ";

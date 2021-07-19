@@ -1,6 +1,6 @@
-export const addToCart = (id, target) => ({
+export const addToCart = (id) => ({
     type: "ADD_TO_CART",
-    payload: { id, target }
+    payload: parseInt(id)
 })
 
 export const removeFromCart = id => ({
@@ -13,9 +13,9 @@ export const setStore = data => ({
     payload: data
 })
 
-export const decrement = (id, target) => ({
+export const decrement = (id) => ({
     type: "DECREMENT",
-    payload: { id, target }
+    payload: id
 })
 
 export const emptyCart = () => ({

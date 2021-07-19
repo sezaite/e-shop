@@ -6,6 +6,7 @@
     height: 100vh;
     background-color:$first-color;
     z-index: 3;
+    transition: ease-in-out 0.5s right;
 
     @media(max-width: 860px ){
         width: 40%;
@@ -14,11 +15,31 @@
     @media(max-width: 700px ){
         width: 50%;
     }
-
-    .empty-cart {
+    .cart-btn {
+        position: absolute;
+        background-color: $first-color;
         color: $main-color;
+        width: 30px;
+        height: 30px;
+        top: 0;
+        left: -30px;
+        font-size: 16px;
+        display: grid;
+        place-items: center;
+
+        .x-icon {
+            display: block;
+        }
+        .cart-icon{
+            display: none;
+        }
+
+    }
+    .empty-cart {
+        color: lighten($first-color, 45%);
         text-align: center;
         margin-top: 40px;
+        font-size: 2.4rem;
     }
     .cart-list {
         height: 70vh;
@@ -31,6 +52,9 @@
             position: relative;
             padding: 25px 10px 10px 10px;
 
+            img { 
+                display: none;
+            }
             .remove-btn {
                 //button file
             }
@@ -43,12 +67,13 @@
 
                 .cart-elipsis {
                     color: $main-color;
-                    font-size: 12px;
+                    font-size: 1.2rem;
                     width: 70%;
                 }
 
                 .price {
                     color: $secondary-color;
+                    font-size: 1.2rem;
                 }
 
             }
@@ -56,6 +81,7 @@
             
             .amount {
                 color: lighten($first-color, 25%);
+                font-size: 1.2rem;
                 width: 100%;
                 text-align: start;
                 padding: 5px 0;
@@ -82,28 +108,53 @@
             
             h4{
                 text-transform: uppercase;
-                font-size: 12px;
+                font-size: 1.2rem;
                 font-weight: 200;
                 color: lighten($first-color, 25%)
             }
             h3 {
                 color: $secondary-color;
                 font-weight: 200;
+                font-size: 1.6rem;
             }
 
         }
       
         .checkout {
-            
             display: inline-block;
             text-align: center;
             width: 100%;
             background-color: darken($first-color, 20%);
-            color: $main-color;
+            color: darken($main-color, 10%);
             padding: 10px 0;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            transition: all 0.3s;
+        }
+
+        .checkout:hover {
+            cursor: pointer;
+            color: #fff;
         }
 
     }
 
    
+}
+
+.cart-menu.hidden {
+    .x-icon {
+        display: none;
+    }
+    .cart-icon{
+        display: block;
+    }
+    right: -25%;
+    @media(max-width: 860px ){
+        right: -40%;
+    }
+
+    @media(max-width: 700px ){
+        right: -50%;
+    }
 }

@@ -10,6 +10,7 @@ function CartItem({ id, price, title, description, img, amount }) {
     return (
         <div className="cart-block">
             <button className="remove-btn" onClick={() => dispatch(removeFromCart(id))}><FontAwesomeIcon icon={faTimes} className="x-icon" /></button>
+            <img src={img} alt="item-image" />
             <div className="cart-block-top">
                 <LinesEllipsis
                     text={title}
