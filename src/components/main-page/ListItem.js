@@ -7,7 +7,6 @@ import cartPopUp from "../../helpers/cartPopUp";
 
 function ListItem({ id, price, title, img }) {
     const dispatch = useDispatch();
-
     const updateCart = (e) => {
         e.preventDefault();
         dispatch(addToCart(id));
@@ -25,10 +24,9 @@ function ListItem({ id, price, title, img }) {
                     basedOn='words'
                     className="elipsis"
                 />
-
             </Link>
             <h5 className="price">{priceFormatter(price, true)}<u>{priceFormatter(price, false)}</u></h5>
-            <button className="btn" onClick={updateCart}>Add to cart</button>
+            <button className="btn add-to-cart" onClick={updateCart}>Add to cart</button>
         </div>
     )
 }

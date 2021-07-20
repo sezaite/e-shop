@@ -43,11 +43,10 @@
     border: none;
     cursor: pointer;
     transition: all 0.3;
-    
+}
 
 .desc-btn {
     margin-right: 3px;
-}
 }
 
 .inc-btn:hover, .desc-btn:hover {
@@ -56,10 +55,10 @@
 
 .desc-btn.disabled {
     background-color: lighten($first-color, 5%);
-   
     cursor: auto;
 
     &:hover {
         color: darken($main-color, 25%);
     }
 }
+

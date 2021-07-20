@@ -75,10 +75,8 @@
                     color: $secondary-color;
                     font-size: 1.2rem;
                 }
-
             }
-
-            
+         
             .amount {
                 color: lighten($first-color, 25%);
                 font-size: 1.2rem;
@@ -117,7 +115,6 @@
                 font-weight: 200;
                 font-size: 1.6rem;
             }
-
         }
       
         .checkout {
@@ -136,24 +133,21 @@
             cursor: pointer;
             color: #fff;
         }
-
     }
-
-   
 }
 
 .cart-menu.hidden {
+    right: -25%;
+    
     .x-icon {
         display: none;
     }
     .cart-icon{
         display: block;
     }
-    right: -25%;
     @media(max-width: 860px ){
         right: -40%;
     }
-
     @media(max-width: 700px ){
         right: -50%;
     }

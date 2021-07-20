@@ -13,8 +13,6 @@ const cartReducer = (state = initState, action) => {
     }
 
     if (action.type === 'ADD_TO_CART') {
-        console.log(action.payload);
-        console.log(state.store);
         let doesExist = state.cart.find(item => action.payload === item.id);
         if (!doesExist) {
             let newItem = state.store.find(item => action.payload === item.id);

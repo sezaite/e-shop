@@ -1,28 +1,16 @@
 function cartPopUp() {
     const cartMenu = document.querySelector('.cart-menu');
+    const all = cartMenu.querySelectorAll("*");
     cartMenu.classList.remove('hidden');
-    let timer = null;
-
-    function startTimer() {
-        timer = setTimeout(() => {
-            cartMenu.classList.add('hidden');
-        }, 3000);
-    }
-    function stopTimer() {
-        clearTimeout(timer);
-        return;
-    }
-
-    startTimer();
-
-    cartMenu.addEventListener('mouseenter', () => {
-        stopTimer();
-        return;
-    });
-    cartMenu.addEventListener('mouseleave', () => {
-        startTimer();
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains("add-to-cart")) return;
+        for (let one of all) {
+            if (one === e.target) return;
+        }
+        cartMenu.classList.add('hidden');
         return;
     })
+
 }
 
 export default cartPopUp

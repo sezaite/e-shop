@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useHistory } from "react-router-dom";
 import useFetch from '../../helpers/useFetch';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToCart, setStore } from '../../state/actions/cartActions';
 import CartMenu from '../cart/CartMenu';
 import cartPopUp from '../../helpers/cartPopUp';
@@ -13,7 +13,6 @@ function Item() {
     const dispatch = useDispatch();
     const [item, setItem] = useState(null);
 
-    //jei atsidarytu linka is isores
     useEffect(() => {
         if (items !== null) {
             dispatch(setStore(items));
@@ -25,6 +24,7 @@ function Item() {
         e.preventDefault();
         dispatch(addToCart(id));
         cartPopUp();
+
     }
     return (
         <div className="main-block">
@@ -36,13 +36,11 @@ function Item() {
                     <div className="item-right">
                         <h1>{item.title}</h1>
                         <h3 className="price">$ {item.price.toFixed(2)}</h3>
-                        <button className="btn" onClick={updateCart}>Add to cart</button>
+                        <button className="btn add-to-cart" onClick={updateCart}>Add to cart</button>
                         <h3 className="description">Product description</h3>
                         <p className="description">{item.description}</p>
                         <button className="btn back" onClick={() => history.goBack()}>Back</button>
-
                     </div>
-
                 </div>
             )
             }

@@ -1,9 +1,10 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import CartList from './CartList';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
+
 
 function CartMenu() {
     const cart = useSelector((state) => state.cartReducer.cart);
@@ -28,14 +29,11 @@ function CartMenu() {
                             <h4>Subtotal</h4>
                             <h3>$ {total.toFixed(2)}</h3>
                         </div>
-
                         <Link to="" className="checkout">Checkout</Link>
                     </div>
-
                 </>
             )
                 :
-
                 <h2 className="empty-cart">Your cart is empty</h2>}
         </div>
     )
