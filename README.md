@@ -1,5 +1,12 @@
 # E-SHOP with a shopping cart
 
+Made with React and Redux. Front end only. Responsive. API: https://fakestoreapi.com/
+
+## Hosted at
+
+https://sezaite.github.io/e-shop/
+
+## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
