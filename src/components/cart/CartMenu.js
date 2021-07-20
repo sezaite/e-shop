@@ -15,6 +15,8 @@ function CartMenu() {
         visible ? document.querySelector(".cart-menu").classList.remove('hidden') : document.querySelector(".cart-menu").classList.add('hidden');
     }, [visible]);
 
+
+
     return (
         <div className="cart-menu hidden" >
             <div className="cart-btn" onClick={() => setVisible(!visible)}>
