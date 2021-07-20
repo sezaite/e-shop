@@ -9,10 +9,15 @@ import { useState, useEffect } from 'react';
 function CartMenu() {
     const cart = useSelector((state) => state.cartReducer.cart);
     const total = useSelector((state) => state.cartReducer.total);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+        visible ? document.querySelector(".cart-menu").classList.remove('hidden') : document.querySelector(".cart-menu").classList.add('hidden');
+    }, [visible]);
 
     return (
         <div className="cart-menu hidden" >
-            <div className="cart-btn" onClick={(e) => e.target.parentNode.classList.toggle("hidden")}>
+            <div className="cart-btn" onClick={() => setVisible(!visible)}>
                 <FontAwesomeIcon icon={faTimes} className="x-icon" />
                 <FontAwesomeIcon icon={faShoppingCart} className="cart-icon" />
             </div>
