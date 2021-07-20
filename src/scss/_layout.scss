@@ -15,6 +15,7 @@
         grid-template-columns: 20px 1fr 20px;
     }
     @media(max-width: 400px){
+        grid-template-columns: 10px 1fr 10px;
         margin: 0;
 }
 }
