@@ -24,8 +24,8 @@ function CartItem({ id, price, title, description, img, amount }) {
             </div>
             <h6 className="amount">Quantity: {amount}</h6>
             <div className="amount-control">
-                <button className={amount > 1 ? "desc-btn" : "desc-btn disabled"} onClick={(e) => dispatch(decrement(id, e.target))}>-</button>
-                <button className="inc-btn" onClick={(e) => dispatch(addToCart(id, e.target))}>+</button>
+                <button className={amount > 1 ? "desc-btn" : "desc-btn disabled"} onClick={() => dispatch(decrement(id))}>-</button>
+                <button className="inc-btn" onClick={() => dispatch(addToCart(id))}>+</button>
             </div>
         </div>
     )
