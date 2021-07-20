@@ -6,7 +6,7 @@ import NotFound from './components/NotFound';
 
 function App() {
   return (
-    < Router >
+    < Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route exact path="/" component={Store} />
         <Route exact path="/products/:id" component={Item} />
