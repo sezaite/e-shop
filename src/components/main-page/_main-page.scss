@@ -59,6 +59,10 @@
                         object-position: center;
                         transition: all 0.3s;
                         opacity: 0.8;
+
+                        @media(max-width: 860px) {
+                            opacity: 1;
+                        }
                     }
 
                     img:hover {

@@ -29,7 +29,7 @@ function CartMenu() {
                             <h4>Subtotal</h4>
                             <h3>$ {total.toFixed(2)}</h3>
                         </div>
-                        <Link to="" className="checkout">Checkout</Link>
+                        <Link to="#" className="checkout">Checkout</Link>
                     </div>
                 </>
             )

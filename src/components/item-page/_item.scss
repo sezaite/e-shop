@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media(max-width: 500px){
+    @media(max-width: 680px){
         flex-direction: column;
     }
 
@@ -26,9 +26,9 @@
 
     .item-right {
         padding-top: 40px;
-        padding-left: 140px;
+        padding-left: 80px;
         @media(max-width: 1300px) {
-            padding-left: 80px;
+            padding-left: 60px;
         }
         @media(max-width: 680px) {
             padding-left: 20px;

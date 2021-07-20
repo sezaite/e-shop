@@ -1,8 +1,8 @@
 function cartPopUp() {
     const cartMenu = document.querySelector('.cart-menu');
-    const all = cartMenu.querySelectorAll("*");
     cartMenu.classList.remove('hidden');
     window.addEventListener('click', (e) => {
+        const all = cartMenu.querySelectorAll("*");
         if (e.target.classList.contains("add-to-cart")) return;
         for (let one of all) {
             if (one === e.target) return;
